@@ -9,6 +9,15 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$soundNumber.wav');
   }
 
+  var colors = [
+    Colors.red,
+    Colors.orange,
+    Colors.yellow,
+    Colors.green,
+    Colors.blue,
+    Colors.purple
+  ];
+
   Widget buildKey(Color buttonColor, int position) {
     return Expanded(
       child: FlatButton(
@@ -23,19 +32,10 @@ class XylophoneApp extends StatelessWidget {
   List<Widget> buildKeys() {
     List<Widget> allButtons = [];
     for (int i = 0; i < colors.length; i++) {
-      allButtons.add(buildKey(colors[i], i+1));
+      allButtons.add(buildKey(colors[i], i + 1));
     }
     return allButtons;
   }
-
-  var colors = [
-    Colors.red,
-    Colors.orange,
-    Colors.yellow,
-    Colors.green,
-    Colors.blue,
-    Colors.purple
-  ];
 
   @override
   Widget build(BuildContext context) {
